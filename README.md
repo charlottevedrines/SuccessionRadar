@@ -18,10 +18,10 @@ interface.py --> selections.json --> discovery.py --> matched_companies.json -->
 | Component | What it does |
 |---|---|
 | `interface.py` | Streamlit form to choose a region and an employee band. Saves `selections.json`. |
-| `discovery.py` | Queries the public [recherche-entreprises](https://recherche-entreprises.api.gouv.fr) API for ESNs matching the filters. Limited to 10 companies while prototyping. Writes `matched_companies.json`. |
+| `discovery.py` | Queries the public [recherche-entreprises](https://recherche-entreprises.api.gouv.fr) API for ESNs (NAF codes 62.01Z, 62.02A, 62.02B, 62.03Z, 62.09Z) matching the filters. Limited to 10 companies while prototyping. Writes `matched_companies.json`. |
 | `tools/ownership/detecter_holding.py` | **Ownership agent**: detects whether a new holding company was created to hold the target's shares (details below). Writes `tools/ownership/holding_results.json`. |
 | `tools/ownership/detecter_holding_evenements.py` | Variant of the Ownership agent organised around events (securities transactions). Writes `tools/ownership/holding_events_results.json`. |
-| `Leadership tool/` | Standalone tool that enriches companies with officers' ages and estimated tenure, from public company data and BODACC announcements. Has its own input file (see `input_test.json`). |
+| `tools/leadership/` | Standalone tool that enriches companies with officers' ages and estimated tenure, from public company data and BODACC announcements. Has its own input file (see `input_test.json`). |
 
 ### Ownership agent
 
@@ -65,7 +65,7 @@ By default `SIREN_TEST` (top of the script) restricts a run to a single test com
 Leadership tool:
 
 ```bash
-cd "Leadership tool"
+cd tools/leadership
 python run.py input_test.json output.json
 ```
 
@@ -79,4 +79,4 @@ python run.py input_test.json output.json
 
 ## Contributions
 
-Team project (5 people). In this repository, `interface.py`, `discovery.py` and `tools/ownership/` were written by Charlotte Védrines; `Leadership tool/` was written by other team members (see `git log`).
+Team project (5 people). In this repository, `interface.py`, `discovery.py` and `tools/ownership/` were written by Charlotte Védrines; `tools/leadership/` was written by other team members (see `git log`).
