@@ -42,7 +42,8 @@ The schema guarantees the shape of the answer, not its correctness: the LLM extr
 Requirements: Python 3.11, [Ollama](https://ollama.com) running locally, and an account on the INPI RNE API.
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+conda create -n succession python=3.11 -y
+conda activate succession
 pip install -r requirements.txt
 
 # 1. Choose filters, then click "Save selections"
