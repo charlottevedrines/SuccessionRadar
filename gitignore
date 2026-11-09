@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets: never commit credentials
+.env
+*.env
+config_inpi.json
+
+# Generated files (may contain personal data about company officers)
+selections.json
+matched_companies.json
+tools/ownership/holding_results.json
+tools/ownership/holding_events_results.json
+Leadership tool/output*.json
+
+# Editors and OS
+.DS_Store
+.vscode/
+.idea/
