@@ -14,7 +14,7 @@ selections.json
 matched_companies.json
 tools/ownership/holding_results.json
 tools/ownership/holding_events_results.json
-Leadership tool/output*.json
+tools/leadership/output*.json
 
 # Editors and OS
 .DS_Store
